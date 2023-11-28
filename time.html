@@ -25,37 +25,80 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.js'
         integrity='sha512-0mHP4QWDFa1GsmKUfBfEoEdklBFylG/SiXC6v6Vk9qPjuUdqCHXqT+VAt+2i0Na8b1xe+7dVKw7BTWUq7QRivA=='
         crossorigin='anonymous'></script>
-        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.css' integrity='sha512-9rQHiowu3AtR6xVE8Jz+lyV1r2/xXQVW0kI8+O9+PrfWSvoOHDF2SOUIUFAj0mwIAPf1ezTxRlpdngvsZeC4Rw==' crossorigin='anonymous'/>
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.css'
+        integrity='sha512-9rQHiowu3AtR6xVE8Jz+lyV1r2/xXQVW0kI8+O9+PrfWSvoOHDF2SOUIUFAj0mwIAPf1ezTxRlpdngvsZeC4Rw=='
+        crossorigin='anonymous' />
     <script
         src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/locales/bootstrap-datepicker.zh-TW.min.js'
         integrity='sha512-JBbOVs1ZLxMgoJ+CLhRotpVngRlsCxS6XsB9hddlH9T0w2NQD9bKWwKAWiVaMj/i5x5XNCbHNB7DO70xs5ol/w=='
         crossorigin='anonymous'></script>
+    <style>
+        .table-condensed {
+            width: 280px;
+        }
+
+        thead tr:nth-child(2) {
+            height: 48px;
+        }
+
+        tbody td span:hover,
+        .datepicker-months thead tr th:hover,
+        .datepicker-days td:hover,
+        .datepicker-days th:hover {
+            background-color: #9bec64 !important;
+        }
+    </style>
 </head>
 
 <body>
-    <section class="container">
+    <section class="container-fluid">
         <h2 class="py-2">Datepicker in Bootstrap 5</h2>
         <form class="row">
-            <label for="date" class="col-1 col-form-label">Date</label>
-            <div class="col-5">
-                <div class="input-group date" id="datepicker" style="width:160px;">
-                    <input type="text" class="form-control" id="date" />
+            <div class="col- col-md-4">
+                <div class="input-group date w-160px"  id="datepicker">
+                    <input type="text" class="form-control"  id="date" />
                     <span class="input-group-append">
                         <span class="input-group-text bg-light d-block">
                             <i class="fa fa-calendar"></i>
                         </span>
                     </span>
                 </div>
-            </div>
+                <!-- <div class="input-group input-daterange">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text border-0">從</span>
+                    </div>
+                    <input type="text" id="inputDate1" placeholder="選擇日期" class="form-control">
+                    <div class="input-group-addon mx-4"> <span class="input-group-text border-0">到</span> </div>
+                    <input type="text" id="inputDate2" placeholder="選擇日期" class="form-control">
+                </div> -->
         </form>
     </section>
     <script>
+        var ops = {
+            language: 'zh-CN', 
+            autoclose: true, 
+            clearBtn: true,
+            format: "yyyy-mm-dd",
+            uiLibrary: "bootstrap5",
+            language: "zh-TW"
+        };
         $(function () {
-            $('#datepicker').datepicker({
-                uiLibrary: "bootstrap5",
-                language: "zh-TW" // 设置日期选择器语言为繁体中文
-            });
+            $('#datepicker').datepicker(ops);
         });
+    
+        
+    
+        // $("#inputDate1").datepicker(ops);
+        // $("#inputDate2").datepicker(ops);
+    
+        // //第一个输入选中日期后设置第二给输入框的开始日期
+        // $("#inputDate1").datepicker().on("changeDate", function (e) {
+        //     $("#inputDate2").datepicker('setStartDate', e.date);
+        // });
+        // $("#inputDate2").datepicker().on("changeDate", function (e) {
+        //     $("#inputDate1").datepicker('setEndDate', e.date);
+        // });
     </script>
 </body>
 
