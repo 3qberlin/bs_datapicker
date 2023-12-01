@@ -10,6 +10,10 @@
         .input-group-append {
             cursor: pointer;
         }
+
+        .table-condensed {
+            width: 268px;
+        }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -52,8 +56,8 @@
 </head>
 
 <body>
-<!-- 單日期選擇器 -->
-<!-- <form class="row d-flex flex-wrap">
+    <!-- 單日期選擇器 -->
+    <!-- <form class="row d-flex flex-wrap">
         <div class="col-auto col-md-5">
             <div class="input-group date w-160px" id="datepicker">
                 <input type="text" class="form-control text-center" id="inputDate1" />
@@ -71,94 +75,95 @@
         </div>
     </form> -->
 
-<!-- 雙日期選擇器 -->
+    <!-- 雙日期選擇器 -->
 
-<div class="card">
-    <!-- <div class="container"> -->
-    <form class="row card-body d-flex flex-wrap row-cols-1 rol-cols-md-auto m-0 p-0 p-12" id="myForm">
-        <div class="col-auto mb-12">
-            <div class="d-flex flex-nowrap">
-                <div class="input-group input-daterange">
+    <div class="card">
+        <!-- <div class="container"> -->
+        <form class="row card-body d-flex flex-wrap row-cols-1 rol-cols-md-auto m-0 p-0 p-12" id="myForm">
+            <div class="col-auto mb-12">
+                <div class="d-flex flex-nowrap">
+                    <div class="input-group input-daterange">
 
 
-                    <span class="input-group-text border-0 m-0">從</span>
-                    <input type="text" id="inputDate1" placeholder="請選擇日期" style="min-width: 96px;"
-                        class="form-control form-control-sm m-0 p-0 border-secondary rounded-1">
-                </div>
-                <div class="input-group input-daterange">
-                    <span class="input-group-text border-0 m-0">到</span>
-                    <input type="text" id="inputDate2" placeholder="請選擇日期" style="min-width: 96px;"
-                        class="form-control form-control-sm m-0 p-0 border-secondary rounded-1">
-                </div>
+                        <span class="input-group-text border-0 m-0">從</span>
+                        <input type="text" id="inputDate1" placeholder="請選擇日期" style="min-width: 96px;"
+                            class="form-control form-control-sm m-0 p-0 border-secondary rounded-1">
+                    </div>
+                    <div class="input-group input-daterange">
+                        <span class="input-group-text border-0 m-0">到</span>
+                        <input type="text" id="inputDate2" placeholder="請選擇日期" style="min-width: 96px;"
+                            class="form-control form-control-sm m-0 p-0 border-secondary rounded-1">
+                    </div>
 
-            </div>
-        </div>
-        <div class="col-auto mb-12">
-            <div class="input-group-addon input-group-sm overflow-auto d-flex flex-nowrap">
-                <div class="btn-group " role="group" aria-label="dayInputGroup">
-                    <button type="button" class="btn btn-outline-secondary p-0 px-8" id="prevDay"><i
-                            class="bi bi-arrow-left"></i></button>
-                    <button type="button" class="btn btn-outline-secondary p-0 px-8 text-nowrap" id="today">本日</button>
-                    <button type="button" class="btn btn-outline-secondary p-0 px-8" id="nextDay"><i
-                            class="bi bi-arrow-right"></i></button>
-                </div>
-                <div class="btn-group ms-16" role="group" aria-label="weekInputGroup">
-                    <button type="button" class="btn btn-outline-secondary p-0 px-8" id="prevWeek"><i
-                            class="bi bi-arrow-left"></i></button>
-                    <button type="button" class="btn btn-outline-secondary p-0 px-8 text-nowrap"
-                        id="thisWeek">本週</button>
-                    <button type="button" class="btn btn-outline-secondary p-0 px-8" id="nextWeek"><i
-                            class="bi bi-arrow-right"></i></button>
-                </div>
-                <div class="btn-group ms-16" role="group" aria-label="monthInputGroup">
-                    <button type="button" class="btn btn-outline-secondary p-0 px-8" id="prevMonth"><i
-                            class="bi bi-arrow-left"></i></button>
-                    <button type="button" class="btn btn-outline-secondary p-0 px-8 text-nowrap"
-                        id="thisMonth">本月</button>
-                    <button type="button" class="btn btn-outline-secondary p-0 px-8" id="nextMonth"><i
-                            class="bi bi-arrow-right"></i></button>
-                </div>
-                <button class="btn btn-outline-secondary py-6 px-8 ms-16 text-nowrap" id="thisYear">今年</button>
-            </div>
-        </div>
-        <div class="col-12 d-flex flex-wrap">
-            <div class="col-auto mb-12 msJustify">
-                <div class="input-group input-group-sm mb-3">
-                    <button class="btn btn-outline-secondary" type="button">付款方式</button>
-                    <select class="form-select border-1 border-secondary" id="temp002" aria-label="button addon">
-                        <option selected>全部</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three lorem10</option>
-                    </select>
                 </div>
             </div>
-            <div class="col-auto mb-12 msJustify">
-                <div class="input-group input-group-sm mb-3">
-                    <button class="btn btn-outline-secondary" type="button">對帳結果</button>
-                    <select class="form-select border-1 border-secondary" id="temp003" aria-label="button addon">
-                        <option selected>全部</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
+            <div class="col-auto mb-12">
+                <div class="input-group-addon input-group-sm overflow-auto d-flex flex-nowrap">
+                    <div class="btn-group " role="group" aria-label="dayInputGroup">
+                        <button type="button" class="btn btn-outline-secondary p-0 px-8" id="prevDay"><i
+                                class="bi bi-arrow-left"></i></button>
+                        <button type="button" class="btn btn-outline-secondary p-0 px-8 text-nowrap"
+                            id="today">本日</button>
+                        <button type="button" class="btn btn-outline-secondary p-0 px-8" id="nextDay"><i
+                                class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="btn-group ms-16" role="group" aria-label="weekInputGroup">
+                        <button type="button" class="btn btn-outline-secondary p-0 px-8" id="prevWeek"><i
+                                class="bi bi-arrow-left"></i></button>
+                        <button type="button" class="btn btn-outline-secondary p-0 px-8 text-nowrap"
+                            id="thisWeek">本週</button>
+                        <button type="button" class="btn btn-outline-secondary p-0 px-8" id="nextWeek"><i
+                                class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="btn-group ms-16" role="group" aria-label="monthInputGroup">
+                        <button type="button" class="btn btn-outline-secondary p-0 px-8" id="prevMonth"><i
+                                class="bi bi-arrow-left"></i></button>
+                        <button type="button" class="btn btn-outline-secondary p-0 px-8 text-nowrap"
+                            id="thisMonth">本月</button>
+                        <button type="button" class="btn btn-outline-secondary p-0 px-8" id="nextMonth"><i
+                                class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <button class="btn btn-outline-secondary py-6 px-8 ms-16 text-nowrap" id="thisYear">今年</button>
                 </div>
             </div>
-            <div class="col-auto mb-12 msJustify">
-                <div class="input-group input-group-sm mb-3">
-                    <button for="temp001" class="btn btn-outline-secondary">訂單編號</button>
-                    <input type="text" name="" id="temp001" class="form-control border-1 border-secondary">
+            <div class="col-12 d-flex flex-wrap">
+                <div class="col-auto mb-12 msJustify">
+                    <div class="input-group input-group-sm mb-3">
+                        <button class="btn btn-outline-secondary" type="button">付款方式</button>
+                        <select class="form-select border-1 border-secondary" id="temp002" aria-label="button addon">
+                            <option selected>全部</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three lorem10</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-auto mb-12 msJustify">
+                    <div class="input-group input-group-sm mb-3">
+                        <button class="btn btn-outline-secondary" type="button">對帳結果</button>
+                        <select class="form-select border-1 border-secondary" id="temp003" aria-label="button addon">
+                            <option selected>全部</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-auto mb-12 msJustify">
+                    <div class="input-group input-group-sm mb-3">
+                        <button for="temp001" class="btn btn-outline-secondary">訂單編號</button>
+                        <input type="text" name="" id="temp001" class="form-control border-1 border-secondary">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-12 d-flex justify-content-center justify-content-md-end">
-            <input type="reset" value="清除" class="btn btn-yellow reset">
-            <input type="submit" value="送出" class="btn btn-primary ms-12">
-        </div>
-    </form>
-    <!-- </div> -->
-</div>
-<!-- <div class="card mt-0">
+            <div class="col-12 d-flex justify-content-center justify-content-md-end">
+                <input type="reset" value="清除" class="btn btn-yellow reset">
+                <input type="submit" value="送出" class="btn btn-primary ms-12">
+            </div>
+        </form>
+        <!-- </div> -->
+    </div>
+    <!-- <div class="card mt-0">
     <div class="card-body">
         <div class="container">
 
@@ -239,269 +244,269 @@
         </div>
     </div>
 </div> -->
-<div class="card mt-12">
-    <div class="card-body table-responsive">
-        <div class="d-flex justify-content-end">
-            <a href="#"><span class="badge bg-info m-4 rounded-1 fw-normal">另存</span></a>
-            <a href="#"><span class="badge bg-secondary m-4 rounded-1 fw-normal">列印</span></a>
-            <a href="#"><span class="badge bg-warning m-4 rounded-1 fw-normal">重整</span></a>
+    <div class="card mt-12">
+        <div class="card-body table-responsive">
+            <div class="d-flex justify-content-end">
+                <a href="#"><span class="badge bg-info m-4 rounded-1 fw-normal">另存</span></a>
+                <a href="#"><span class="badge bg-secondary m-4 rounded-1 fw-normal">列印</span></a>
+                <a href="#"><span class="badge bg-warning m-4 rounded-1 fw-normal">重整</span></a>
+            </div>
+            <table class="table table-sm table-hover">
+                <thead class="table-info">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry the Bird</td>
+                        <td>@twitter</td>
+                        <td>Thornton</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <table class="table table-sm table-hover">
-            <thead class="table-info">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>Thornton</td>
-                </tr>
-            </tbody>
-        </table>
     </div>
-</div>
-<script>
+    <script>
 
-    const formSet = document.querySelector('form');
-    var ops = {
-        language: 'zh-TW',
-        autoclose: true,
-        // clearBtn: true,
-        format: "yyyy-mm-dd",
-        uiLibrary: "bootstrap5",
-        todayHighlight: true,
-      
-        orientation: 'bottom'
-    };
+        const formSet = document.querySelector('form');
+        var ops = {
+            language: 'zh-TW',
+            autoclose: true,
+            // clearBtn: true,
+            format: "yyyy-mm-dd",
+            uiLibrary: "bootstrap5",
+            todayHighlight: true,
 
-    $('#inputDate1').on('show', function(e) {
-    var $datepicker = $(this);
-    var $datepickerPopup = $datepicker.find('.datepicker');
+            orientation: 'bottom'
+        };
 
-    // 檢查月曆的位置
-    var datepickerWidth = $datepickerPopup.outerWidth();
-    var windowWidth = $(window).width();
+        $('#inputDate1').on('show', function (e) {
+            var $datepicker = $(this);
+            var $datepickerPopup = $datepicker.find('.datepicker');
 
-    // 如果月曆超出視窗右側，則將其移動到視窗中間
-    if (datepickerWidth > windowWidth) {
-        var leftPosition = (windowWidth - datepickerWidth) / 2;
-        $datepickerPopup.css('left', leftPosition);
-    }
-});
+            // 檢查月曆的位置
+            var datepickerWidth = $datepickerPopup.outerWidth();
+            var windowWidth = $(window).width();
 
-    // // 單日期選擇器
-    // $(function () {
-    //     let inputDate = $('#inputDate1');
-
-    //     var today = new Date();
-    //     let formattedDate = formatDate(today);
-    //     inputDate.val(formattedDate);
-
-    //     $('#inputDate1').datepicker(ops);
-
-    //     $('#prevDay').click(function () {
-    //         modifyDate(-1);
-    //     });
-
-    //     $('#nextDay').click(function () {
-    //         modifyDate(1);
-    //     });
-
-    //     $('#today').click(function () {
-    //         setToday();
-    //     });
-
-    //     $('#spanCalender').click(function () {
-    //         $('#inputDate1').datepicker('show');
-    //     });
-
-    //     function setToday() {
-    //         var today = new Date();
-    //         var formattedToday = formatDate(today);
-    //         inputDate.val(formattedToday);
-    //     }
-
-    //     function formatDate(date) {
-    //         var year = date.getFullYear();
-    //         var month = ('0' + (date.getMonth() + 1)).slice(-2);
-    //         var day = ('0' + date.getDate()).slice(-2);
-    //         return year + '-' + month + '-' + day;
-    //     }
-
-    //     function modifyDate(days) {
-    //         var currentDate = new Date(inputDate.val());
-    //         currentDate.setDate(currentDate.getDate() + days);
-    //         var formattedDate = formatDate(currentDate);
-    //         inputDate.val(formattedDate);
-    //     }
-    // });
-
-    // 雙日期選擇器
-    $(function () {
-        // 初始設定為今天日期
-        let today = new Date();
-        $('#inputDate1').val(formatDate(today));
-        $('#inputDate2').val(formatDate(today));
-
-        $('#inputDate1, #inputDate2').datepicker(ops);
-
-        // 按鈕事件處理
-        $('#prevDay').click(function () {
-            modifyDate(-1);
+            // 如果月曆超出視窗右側，則將其移動到視窗中間
+            if (datepickerWidth > windowWidth) {
+                var leftPosition = (windowWidth - datepickerWidth) / 2;
+                $datepickerPopup.css('left', leftPosition);
+            }
         });
-        $('#nextDay').click(function () {
-            modifyDate(1);
+
+        // // 單日期選擇器
+        // $(function () {
+        //     let inputDate = $('#inputDate1');
+
+        //     var today = new Date();
+        //     let formattedDate = formatDate(today);
+        //     inputDate.val(formattedDate);
+
+        //     $('#inputDate1').datepicker(ops);
+
+        //     $('#prevDay').click(function () {
+        //         modifyDate(-1);
+        //     });
+
+        //     $('#nextDay').click(function () {
+        //         modifyDate(1);
+        //     });
+
+        //     $('#today').click(function () {
+        //         setToday();
+        //     });
+
+        //     $('#spanCalender').click(function () {
+        //         $('#inputDate1').datepicker('show');
+        //     });
+
+        //     function setToday() {
+        //         var today = new Date();
+        //         var formattedToday = formatDate(today);
+        //         inputDate.val(formattedToday);
+        //     }
+
+        //     function formatDate(date) {
+        //         var year = date.getFullYear();
+        //         var month = ('0' + (date.getMonth() + 1)).slice(-2);
+        //         var day = ('0' + date.getDate()).slice(-2);
+        //         return year + '-' + month + '-' + day;
+        //     }
+
+        //     function modifyDate(days) {
+        //         var currentDate = new Date(inputDate.val());
+        //         currentDate.setDate(currentDate.getDate() + days);
+        //         var formattedDate = formatDate(currentDate);
+        //         inputDate.val(formattedDate);
+        //     }
+        // });
+
+        // 雙日期選擇器
+        $(function () {
+            // 初始設定為今天日期
+            let today = new Date();
+            $('#inputDate1').val(formatDate(today));
+            $('#inputDate2').val(formatDate(today));
+
+            $('#inputDate1, #inputDate2').datepicker(ops);
+
+            // 按鈕事件處理
+            $('#prevDay').click(function () {
+                modifyDate(-1);
+            });
+            $('#nextDay').click(function () {
+                modifyDate(1);
+            });
+            $('#prevWeek').click(function () {
+                modifyWeek(-7);
+            });
+            $('#thisWeek').click(function () {
+                setWeekDates();
+            });
+            $('#nextWeek').click(function () {
+                modifyWeek(7);
+            });
+            $('#prevMonth').click(function () {
+                modifyMonth(-1);
+            });
+            $('#thisMonth').click(function () {
+                setMonthDates();
+            });
+            $('#nextMonth').click(function () {
+                modifyMonth(1);
+            });
+            $('#thisYear').click(function () {
+                setYearDates();
+            });
+            $('#today').click(function () {
+                setToday();
+            });
         });
-        $('#prevWeek').click(function () {
-            modifyWeek(-7);
+
+        // 修改日期的輔助函數
+        function modifyDate(days) {
+            var date1 = new Date($('#inputDate1').val());
+            var date2 = new Date($('#inputDate2').val());
+
+            date1.setDate(date1.getDate() + days);
+            date2.setDate(date2.getDate() + days);
+
+            $('#inputDate1').datepicker('setDate', date1);
+            $('#inputDate2').datepicker('setDate', date2);
+        }
+
+        // 設置本週日期
+        function setWeekDates() {
+            var today = new Date();
+            var firstDayOfWeek = new Date(today.setDate(today.getDate() - today.getDay())); // 本週的第一天是星期日
+            var lastDayOfWeek = new Date(today.setDate(today.getDate() - today.getDay() + 6)); // 本週的最後一天是星期六
+
+            $('#inputDate1').datepicker('setDate', firstDayOfWeek);
+            $('#inputDate2').datepicker('setDate', lastDayOfWeek);
+        }
+
+        // 修改週的輔助函數
+        function modifyWeek(days) {
+            var date1 = new Date($('#inputDate1').val());
+            var date2 = new Date($('#inputDate2').val());
+
+            date1.setDate(date1.getDate() + days);
+            date2.setDate(date2.getDate() + days);
+
+            var firstDayOfWeek = new Date(date1.setDate(date1.getDate() - date1.getDay()));
+            var lastDayOfWeek = new Date(date2.setDate(date2.getDate() - date2.getDay() + 6));
+
+            $('#inputDate1').datepicker('setDate', firstDayOfWeek);
+            $('#inputDate2').datepicker('setDate', lastDayOfWeek);
+        }
+
+        // 修改月份的輔助函數
+        function modifyMonth(months) {
+            var date1 = new Date($('#inputDate1').val());
+            var date2 = new Date($('#inputDate2').val());
+
+            var targetMonth = date1.getMonth() + months;
+            date1 = new Date(date1.getFullYear(), targetMonth, 1); // 设置 date1 为目标月份的第一天
+            date2 = new Date(date1.getFullYear(), date1.getMonth() + 1, 0); // 设置 date2 为 date1 当月的最后一天
+
+            $('#inputDate1').datepicker('setDate', date1);
+            $('#inputDate2').datepicker('setDate', date2);
+        }
+
+        // 設置本月日期
+        function setMonthDates() {
+            var today = new Date();
+            var firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+            var lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+
+            $('#inputDate1').datepicker('setDate', firstDayOfMonth);
+            $('#inputDate2').datepicker('setDate', lastDayOfMonth);
+        }
+
+        // 設置本年日期
+        function setYearDates() {
+            var today = new Date();
+            var firstDayOfYear = new Date(today.getFullYear(), 0, 1);
+            var lastDayOfYear = new Date(today.getFullYear(), 11, 31);
+
+            $('#inputDate1').datepicker('setDate', firstDayOfYear);
+            $('#inputDate2').datepicker('setDate', lastDayOfYear);
+        }
+
+        // 設置本日日期
+        function setToday() {
+            var today = new Date();
+            $('#inputDate1').datepicker('setDate', today);
+            $('#inputDate2').datepicker('setDate', today);
+        }
+
+        // 格式化日期函數
+        function formatDate(date) {
+            var year = date.getFullYear();
+            var month = ('0' + (date.getMonth() + 1)).slice(-2);
+            var day = ('0' + date.getDate()).slice(-2);
+            return year + '-' + month + '-' + day;
+        }
+
+        const resetBtn = document.querySelector('.reset');
+        const form = document.getElementById('myForm');
+
+        resetBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // 重置表單，但保留日期
+            form.reset();
+
+            let today = new Date();
+            $('#inputDate1').val(formatDate(today));
+            $('#inputDate2').val(formatDate(today));
         });
-        $('#thisWeek').click(function () {
-            setWeekDates();
-        });
-        $('#nextWeek').click(function () {
-            modifyWeek(7);
-        });
-        $('#prevMonth').click(function () {
-            modifyMonth(-1);
-        });
-        $('#thisMonth').click(function () {
-            setMonthDates();
-        });
-        $('#nextMonth').click(function () {
-            modifyMonth(1);
-        });
-        $('#thisYear').click(function () {
-            setYearDates();
-        });
-        $('#today').click(function () {
-            setToday();
-        });
-    });
 
-    // 修改日期的輔助函數
-    function modifyDate(days) {
-        var date1 = new Date($('#inputDate1').val());
-        var date2 = new Date($('#inputDate2').val());
-
-        date1.setDate(date1.getDate() + days);
-        date2.setDate(date2.getDate() + days);
-
-        $('#inputDate1').datepicker('setDate', date1);
-        $('#inputDate2').datepicker('setDate', date2);
-    }
-
-    // 設置本週日期
-    function setWeekDates() {
-        var today = new Date();
-        var firstDayOfWeek = new Date(today.setDate(today.getDate() - today.getDay())); // 本週的第一天是星期日
-        var lastDayOfWeek = new Date(today.setDate(today.getDate() - today.getDay() + 6)); // 本週的最後一天是星期六
-
-        $('#inputDate1').datepicker('setDate', firstDayOfWeek);
-        $('#inputDate2').datepicker('setDate', lastDayOfWeek);
-    }
-
-    // 修改週的輔助函數
-    function modifyWeek(days) {
-        var date1 = new Date($('#inputDate1').val());
-        var date2 = new Date($('#inputDate2').val());
-
-        date1.setDate(date1.getDate() + days);
-        date2.setDate(date2.getDate() + days);
-
-        var firstDayOfWeek = new Date(date1.setDate(date1.getDate() - date1.getDay()));
-        var lastDayOfWeek = new Date(date2.setDate(date2.getDate() - date2.getDay() + 6));
-
-        $('#inputDate1').datepicker('setDate', firstDayOfWeek);
-        $('#inputDate2').datepicker('setDate', lastDayOfWeek);
-    }
-
-    // 修改月份的輔助函數
-    function modifyMonth(months) {
-        var date1 = new Date($('#inputDate1').val());
-        var date2 = new Date($('#inputDate2').val());
-
-        var targetMonth = date1.getMonth() + months;
-        date1 = new Date(date1.getFullYear(), targetMonth, 1); // 设置 date1 为目标月份的第一天
-        date2 = new Date(date1.getFullYear(), date1.getMonth() + 1, 0); // 设置 date2 为 date1 当月的最后一天
-
-        $('#inputDate1').datepicker('setDate', date1);
-        $('#inputDate2').datepicker('setDate', date2);
-    }
-
-    // 設置本月日期
-    function setMonthDates() {
-        var today = new Date();
-        var firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-        var lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
-
-        $('#inputDate1').datepicker('setDate', firstDayOfMonth);
-        $('#inputDate2').datepicker('setDate', lastDayOfMonth);
-    }
-
-    // 設置本年日期
-    function setYearDates() {
-        var today = new Date();
-        var firstDayOfYear = new Date(today.getFullYear(), 0, 1);
-        var lastDayOfYear = new Date(today.getFullYear(), 11, 31);
-
-        $('#inputDate1').datepicker('setDate', firstDayOfYear);
-        $('#inputDate2').datepicker('setDate', lastDayOfYear);
-    }
-
-    // 設置本日日期
-    function setToday() {
-        var today = new Date();
-        $('#inputDate1').datepicker('setDate', today);
-        $('#inputDate2').datepicker('setDate', today);
-    }
-
-    // 格式化日期函數
-    function formatDate(date) {
-        var year = date.getFullYear();
-        var month = ('0' + (date.getMonth() + 1)).slice(-2);
-        var day = ('0' + date.getDate()).slice(-2);
-        return year + '-' + month + '-' + day;
-    }
-
-    const resetBtn = document.querySelector('.reset');
-    const form = document.getElementById('myForm');
-
-    resetBtn.addEventListener('click', function (event) {
-        event.preventDefault();
-
-        // 重置表單，但保留日期
-        form.reset();
-
-        let today = new Date();
-        $('#inputDate1').val(formatDate(today));
-        $('#inputDate2').val(formatDate(today));
-    });
-
-    function formatDate(date) {
-        var year = date.getFullYear();
-        var month = ('0' + (date.getMonth() + 1)).slice(-2);
-        var day = ('0' + date.getDate()).slice(-2);
-        return year + '-' + month + '-' + day;
-    }
-</script>
+        function formatDate(date) {
+            var year = date.getFullYear();
+            var month = ('0' + (date.getMonth() + 1)).slice(-2);
+            var day = ('0' + date.getDate()).slice(-2);
+            return year + '-' + month + '-' + day;
+        }
+    </script>
 </body>
 
 </html>
